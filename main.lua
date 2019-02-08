@@ -57,8 +57,8 @@ function love.draw()
 end
 
 function love.update(dt)
-		local x,y = love.mouse.getPosition()
-		for i,v in ipairs(PartArray) do
+	local x,y = love.mouse.getPosition()
+	for i,v in ipairs(PartArray) do
 		local xfor, yfor = CalculateForce(PartArray[i].xpos, PartArray[i].ypos, x, y)
 		v:move(xfor, yfor, dt)
 	end
