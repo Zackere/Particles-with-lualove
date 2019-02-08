@@ -31,13 +31,13 @@ function love.draw()
 	for i,v in ipairs(PartArray) do
 	local x,y = love.mouse.getPosition()		
 	local r = (v.xpos - x)^2 + (v.ypos - y)^2
-		r = math.pow(r, 0.5)
-		b = 0
-		if r > 255 then 
-			b = r - 255 
-			r = 255
-		end
-		if b > 255 then b = 255 end
+	r = math.pow(r, 0.5)
+	b = 0
+	if r > 255 then 
+		b = r - 255 
+		r = 255
+	end
+	if b > 255 then b = 255 end
 		love.graphics.setColor(255, r, b)
 		love.graphics.points(v.xpos, v.ypos)
 	end
