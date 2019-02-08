@@ -62,5 +62,4 @@ function love.update(dt)
 		local xfor, yfor = CalculateForce(PartArray[i].xpos, PartArray[i].ypos, x, y)
 		v:move(xfor, yfor, dt)
 	end
-
 end
