@@ -1,5 +1,5 @@
-Exponent = 1 / 27
-Factor = 8
+Exponent = 0.5
+Factor = 2
 
 function CalculateForce(xpos, ypos, xcenter, ycenter)
 	local rx = xcenter - xpos
@@ -28,9 +28,9 @@ function love.keypressed(key)
 	if key == "escape" then
 		love.event.quit()
 	elseif key == "w" then
-		Exponent = Exponent + 1e-2
+		Exponent = Exponent + 1e-1
 	elseif key == "s" then
-		Exponent = math.max(Exponent - 1e-2, 0)
+		Exponent = math.max(Exponent - 1e-1, 0)
 	elseif key == "e" then
 		Factor = Factor + 1
 	elseif key == "d" then
@@ -57,8 +57,8 @@ function love.draw()
 end
 
 function love.update(dt)
-	local x,y = love.mouse.getPosition()
-	for i,v in ipairs(PartArray) do
+		local x,y = love.mouse.getPosition()
+		for i,v in ipairs(PartArray) do
 		local xfor, yfor = CalculateForce(PartArray[i].xpos, PartArray[i].ypos, x, y)
 		v:move(xfor, yfor, dt)
 	end
